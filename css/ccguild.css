@@ -1,83 +1,182 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-  padding-top: 50px;
-}
-
-ul.nav, .jumbotron h1{
-	font-family: 'Arvo', courier, serif;
-}
-
-ul.nav{
-	font-size: 13px;
-}
-
-.jumbotron h1{
-	margin-top: 0px;
-	margin-bottom: 50px;
-}
-
-.jumbotron{
+.jumbotron {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../images/eye_background.jpg');
 	text-align: center;
-	background-image: url('../images/hero_image.jpg');
 	color: white;
+	text-shadow:
+	   	-1px -1px 0 #000,  
+	   	1px -1px 0 #000,
+	    -1px 1px 0 #000,
+	    1px 1px 0 #000;
 }
 
-.jumbotron p {
-	margin-bottom: 30px;
-	font-weight: 100;
-	padding: 0 50px;
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
 }
 
-.btn-lg {
-	font-size: 36px;
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
 }
 
-.homepage {
-	text-align: center;
-	padding-top: 30px;
-	padding-bottom: 30px;
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
 }
 
-.homepage h2, .homepage h3 {
-	color: #e74c3c;	
-	text-transform: uppercase;
-	font-family: 'Arvo', courier, serif;
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
 }
 
-.homepage h2 {
-	font-size: 30px;
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
 }
 
-.homepage h3 {
-	font-size: 26px;
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.homepage p {
-	font-weight: 300;
-	font-size: 21px;
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
 
-.homepage a {
-	color: #e74c3c;
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
 }
 
-.homepage a:hover {
-	text-decoration: none;
-	opacity: 0.8;
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
 }
 
-.homepage hr {
-	border-color: #e74c3c;
-	width: 160px;
-	margin-top: 15px;
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+table{
+	border-collapse:collapse;width:100%;
+	opacity:0.8;
+	text-align: left;
+	width: auto;
+	margin:auto;
 }
 
-#get-involved {
-	background-color: #f5f5f5;
+table tr:nth-child(odd)	{
+	background-color:#f1f1f1;
+}
+table tr:nth-child(even){
+	background-color:#ffffff;
 }
 
-footer {
-	background-color: #f74c3c;
-	padding-top: 150px;
-	padding-bottom: 30px;
+table th{
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #d4d4d4;
+	padding: 3px;
+	vertical-align: top;
+	text-align: left;
+}
+
+table td{
+	color: black;
+	border: 1px solid #d4d4d4;
+	padding: 5px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	vertical-align: top;
 }
